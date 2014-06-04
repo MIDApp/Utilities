@@ -38,9 +38,6 @@
     TTTAttributedLabel *attributedLabel = (TTTAttributedLabel*) self;
     [attributedLabel setText:attributedString afterInheritingLabelAttributesAndConfiguringWithBlock:nil];
         
-        return mutableAttributedString;
-    }];
-
 }
 
 @end
