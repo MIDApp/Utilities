@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   
   s.author             = { "Andrea Cremaschi" => "andrea.cremaschi@midainformatica.it" }
   s.platform     = :ios, "5.0"
-  s.source       = { :svn => "https://gist.github.com/833829c80367d751cb83.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://gist.github.com/833829c80367d751cb83.git", :tag => "0.0.1" }
 
   s.source_files  = "*.{h,m}"
   s.exclude_files = "Classes/Exclude"
