@@ -1,1 +1,1 @@
- dummy file that gives the name to the gist 
+A TTTAttributedLabel convenience subclass that uses MMarkdown to parse markdown text.
