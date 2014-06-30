@@ -74,8 +74,6 @@
         [self.view removeGestureRecognizer:tapRecognizer];
     }
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     self.dataSource = self;
     self.delegate = self;
     
