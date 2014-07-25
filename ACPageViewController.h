@@ -7,12 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef UIViewController*(^PageViewControllerConfigurationBlock)(id model, int pageNumber);
+typedef UIViewController*(^PageViewControllerConfigurationBlock)(int pageNumber);
 
 @interface ACPageViewController : UIPageViewController
 
 @property (strong) PageViewControllerConfigurationBlock pageViewControllerConfigurationBlock;
-@property (strong) NSArray *modelArray;
 @property int currentPage;
 
 @end

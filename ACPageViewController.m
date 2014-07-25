@@ -24,10 +24,6 @@
     return self;
 }
 
--(void)dealloc {
-    _modelArray = nil;
-}
-
 -(UIScrollView*)scrollView {
     for (UIView *view in self.view.subviews) {
         if ([view isKindOfClass:[UIScrollView class]]) {
@@ -39,12 +35,11 @@
 }
 
 - (UIViewController*)viewControllerAtIndex: (int) index {
-    id model = [self modelArray][index];
     UIViewController *pageVC;
     if (self.pageViewControllerConfigurationBlock) {
-        pageVC = self.pageViewControllerConfigurationBlock(model, index);
+        pageVC = self.pageViewControllerConfigurationBlock(index);
         // TODO: if the pageVC.view's contains a scrollview, its delegate must be setted to self
-//        schedaVC.scrollViewDelegate= self;
+        //        schedaVC.scrollViewDelegate= self;
     } else {
         pageVC = [UIViewController new];
     }
@@ -56,7 +51,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // imposta il delegato della scrollview
     [[self scrollView] setDelegate:self];
     
@@ -73,8 +68,6 @@
     if ( tapRecognizer ) {
         [self.view removeGestureRecognizer:tapRecognizer];
     }
-    
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.dataSource = self;
     self.delegate = self;
@@ -97,7 +90,6 @@
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     int curIndex = viewController.pageIndex;
-    if (curIndex == self.modelArray.count-1) return nil;
     return [self viewControllerAtIndex:curIndex +1];
     
 }
