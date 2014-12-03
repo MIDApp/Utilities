@@ -29,7 +29,7 @@
     }
     
     XNGMarkdownParser *parser = [[XNGMarkdownParser alloc] init];
-    NSAttributedString *attributedString = [parser attributedStringFromMarkdownString:parser];
+    NSAttributedString *attributedString = [parser attributedStringFromMarkdownString:markdown];
     
     TTTAttributedLabel *attributedLabel = (TTTAttributedLabel*) self;
     [attributedLabel setText:attributedString];
