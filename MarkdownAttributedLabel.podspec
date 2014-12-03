@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
  
   s.name         = "MarkdownAttributedLabel"
   s.version      = "0.0.1"
-  s.summary      = "A TTTAttributedLabel convenience subclass that uses MMarkdown to parse markdown text."
+  s.summary      = "A TTTAttributedLabel convenience subclass that uses XNGMarkdownParser to parse markdown text."
  
   s.description  = <<-DESC
 			
@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.dependency 'TTTAttributedLabel'
-  s.dependency 'MMMarkdown'
+  s.dependency 'XNGMarkdownParser'
  
 end
