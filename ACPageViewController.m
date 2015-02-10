@@ -106,14 +106,14 @@
     if (scrollView != [self scrollView]) {
         [[self scrollView] setScrollEnabled: NO];
     } else {
-        UIScrollView *childScrollView = (UIScrollView*)[self.viewControllers.firstObject view];
-        childScrollView.scrollEnabled = NO;
+        UIView *childView = [self.viewControllers.firstObject view];
+        childView.userInteractionEnabled = NO;
     }
 }
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [[self scrollView] setScrollEnabled: YES];
-    UIScrollView *childScrollView = (UIScrollView*)[self.viewControllers.firstObject view];
-    childScrollView.scrollEnabled = YES;
+    UIView *childView = [self.viewControllers.firstObject view];
+    childView.userInteractionEnabled = YES;
 }
 
 @end
