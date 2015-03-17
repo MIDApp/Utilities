@@ -10,8 +10,7 @@ Pod::Spec.new do |s|
  
   s.homepage     = "https://gist.github.com/ec7f6569fbb612778031.git"
   
-  # s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = "MIT"
   
   s.author             = { "Andrea Cremaschi" => "andrea.cremaschi@midainformatica.it" }
   s.platform     = :ios, "5.0"
