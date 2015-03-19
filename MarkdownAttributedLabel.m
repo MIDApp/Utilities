@@ -52,6 +52,7 @@
 {// Initialization code
     self.enabledTextCheckingTypes = 0;
     self.dataDetectorTypes = 0;
+    self.extendsLinkTouchArea = NO;
     
     NSMutableDictionary *linkAttributes = [self.linkAttributes mutableCopy];
     [linkAttributes removeObjectForKey:NSParagraphStyleAttributeName];

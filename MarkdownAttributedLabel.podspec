@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
  
   s.name         = "MarkdownAttributedLabel"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A TTTAttributedLabel convenience subclass that uses XNGMarkdownParser to parse markdown text."
  
   s.description  = <<-DESC
