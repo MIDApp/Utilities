@@ -9,6 +9,6 @@
 
 @interface UIView (FittingSize)
 
-- (void)sizeToFitVertically;
+- (BOOL)sizeToFitVertically;
 
 @end

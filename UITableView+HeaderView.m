@@ -9,9 +9,8 @@ static NSString *ConstraintIdentifier = @"WidthConstraintIdentifier";
     UIView *headerView = self.tableHeaderView;
     
     [self updateWidthConstraintForView:headerView];
-    [headerView sizeToFitVertically];
-    
-    self.tableHeaderView = headerView;
+    if ([headerView sizeToFitVertically])
+        self.tableHeaderView = headerView;
 }
 
 - (void) sizeFooterToFit
@@ -19,9 +18,8 @@ static NSString *ConstraintIdentifier = @"WidthConstraintIdentifier";
     UIView *footerView = self.tableFooterView;
     
     [self updateWidthConstraintForView:footerView];
-    [footerView sizeToFitVertically];
-    
-    self.tableFooterView = footerView;
+    if ([footerView sizeToFitVertically])
+        self.tableFooterView = footerView;
 }
 
 - (void)updateWidthConstraintForView:(UIView *)view
@@ -33,6 +31,8 @@ static NSString *ConstraintIdentifier = @"WidthConstraintIdentifier";
         {
             break;
         }
+        else
+            constraint = nil;
     }
     
     if (!constraint)
@@ -57,18 +57,19 @@ static NSString *ConstraintIdentifier = @"WidthConstraintIdentifier";
 
 @implementation UIView (FittingSize)
 
-- (void)sizeToFitVertically
+- (BOOL)sizeToFitVertically
 {
     CGSize size = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
     if (CGSizeEqualToSize(self.frame.size, size))
-        return;
+        return NO;
     
     self.frame = ({
         CGRect headerFrame = self.frame;
         headerFrame.size = size;
         headerFrame;
     });
+    return YES;
 }
 
 @end
