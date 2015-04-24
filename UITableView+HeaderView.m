@@ -24,6 +24,9 @@ static NSString *ConstraintIdentifier = @"WidthConstraintIdentifier";
 
 - (void)updateWidthConstraintForView:(UIView *)view
 {
+    if (!view)
+        return;
+    
     NSLayoutConstraint *constraint;
     for (constraint in view.constraints)
     {
