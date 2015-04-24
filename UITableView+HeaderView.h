@@ -4,6 +4,8 @@
 
 - (void) sizeHeaderToFit;
 - (void) sizeFooterToFit;
+- (void) sizeHeaderToFitForced:(BOOL)forced;
+- (void) sizeFooterToFitForced:(BOOL)forced;
 
 @end
 
