@@ -105,7 +105,12 @@
     
     NSParagraphStyle *paragraphStyle = [self currentParagraphStyle];
     NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
-    [mutableAttributedString addAttributes:@{ NSParagraphStyleAttributeName : paragraphStyle } range:NSMakeRange(0, [mutableAttributedString length])];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    attributes[NSParagraphStyleAttributeName] = paragraphStyle;
+    if (self.textColor)
+        attributes[NSForegroundColorAttributeName] = self.textColor;
+    [mutableAttributedString addAttributes:[attributes copy]
+                                     range:NSMakeRange(0, [mutableAttributedString length])];
     [label setText:[mutableAttributedString attributedStringWithFontSize:self.font.pointSize]];
 }
 
