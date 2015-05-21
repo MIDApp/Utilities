@@ -20,11 +20,6 @@
 
 @end
 
-@interface NSAttributedString (FontSize)
-
-- (NSAttributedString*) attributedStringWithFontSize:(CGFloat) fontSize;
-
-@end
 
 @implementation MarkdownAttributedLabel
 

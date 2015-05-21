@@ -12,3 +12,9 @@
 -(void)setMarkdownText: (NSString*)markdown;
 
 @end
+
+@interface NSAttributedString (FontSize)
+
+- (NSAttributedString*) attributedStringWithFontSize:(CGFloat) fontSize;
+
+@end
