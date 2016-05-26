@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "A PageViewController subclass with a configuration block and scroll handling."
  
   s.description  = <<-DESC
+A PageViewController subclass with a configuration block and scroll handling.
                    DESC
  
   s.homepage     = "https://gist.github.com/andreacremaschi/0aeeea12fa66ca1fbf78"
@@ -14,7 +15,7 @@ Pod::Spec.new do |s|
   
   s.author             = { "Andrea Cremaschi" => "andrea.cremaschi@midainformatica.it" }
   s.platform     = :ios, "5.0"
-  s.source       = { :git => "https://gist.github.com/0aeeea12fa66ca1fbf78.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://gist.github.com/0aeeea12fa66ca1fbf78.git", :tag => s.version.to_s }
  
   s.source_files  = "*.{h,m}"
 
