@@ -78,6 +78,8 @@
                    direction: UIPageViewControllerNavigationDirectionForward
                     animated: YES
                   completion:nil];
+    
+    self.title = [vc title];
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,6 +104,17 @@
 }
 
 #pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView == [self scrollView])
+    {
+        NSInteger index = (scrollView.contentOffset.x + CGRectGetWidth(self.view.bounds)/2.) / CGRectGetWidth(self.view.bounds);
+        UIViewController *vc = [self viewControllerAtIndex:index];
+        self.title = [vc title];
+    }
+}
+
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if (scrollView != [self scrollView]) {
         [[self scrollView] setScrollEnabled: NO];
