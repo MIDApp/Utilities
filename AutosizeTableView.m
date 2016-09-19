@@ -42,7 +42,7 @@
     [super setTableHeaderView:self.tableHeaderView];
     [super setTableFooterView:self.tableFooterView];
     
-    [super setContentSize:contentSize];
+//    [super setContentSize:contentSize];
     
     [super sizeToFit];
 }
