@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "UITableView convenience classes for resizing header and footer with autolayout."
 
   s.description  = <<-DESC
-			
+		UITableView convenience classes for resizing header and footer with autolayout.	
                    DESC
 
   s.homepage     = "https://github.com/MIDApp/Utilities/tree/AutosizeTableView"
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   
   s.author             = { "Alessio Anesa" => "alessio.anesa@midainformatica.it" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/MIDApp/Utilities.git", :branch => "AutosizeTableView" }
+  s.source       = { :git => "https://github.com/MIDApp/Utilities.git", :tag => "AutosizeTableView" + s.version.to_s }
 
   s.source_files  = "*.{h,m}"
   s.exclude_files = "Classes/Exclude"
