@@ -8,7 +8,6 @@
 #import "MarkdownAttributedLabel.h"
 #import <XNGMarkdownParser/XNGMarkdownParser.h>
 #import <XNGMarkdownParser/XNGMarkdownTokens.h>
-#import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 @interface XNGMarkdownParser ()
 
