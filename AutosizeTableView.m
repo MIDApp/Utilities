@@ -26,25 +26,35 @@
 {
     [super awakeFromNib];
     
-    [self sizeToFit];
+    [self adjustContentSize];
 }
 
-- (void)sizeToFit
+- (void)adjustContentSize
 {
     CGFloat width = self.frame.size.width;
-    CGSize contentSize = [self sizeThatFits:CGSizeMake(width, UILayoutFittingExpandedSize.height)];
-    contentSize.height += [self.tableHeaderView heightToFitVerticallyWithWidth:width];
-    contentSize.height += [self.tableFooterView heightToFitVerticallyWithWidth:width];
-
-    [self.tableHeaderView sizeToFitVerticallyWithWidth:width];
-    [self.tableFooterView sizeToFitVerticallyWithWidth:width];
     
-    [super setTableHeaderView:self.tableHeaderView];
-    [super setTableFooterView:self.tableFooterView];
+    UIView *tableHeaderView = self.tableHeaderView;
+    UIView *tableFooterView = self.tableFooterView;
     
-//    [super setContentSize:contentSize];
-    
-    [super sizeToFit];
+    if ([tableHeaderView sizeToFitVerticallyWithWidth:width] || [tableFooterView sizeToFitVerticallyWithWidth:width])
+    {
+        CGPoint contentOffset = self.contentOffset;
+        
+        [self setTableHeaderView:nil];
+        [self setTableFooterView:nil];
+        
+        CGSize contentSize = [self sizeThatFits:CGSizeMake(width, UILayoutFittingExpandedSize.height)];
+        
+        contentSize.height += [tableHeaderView heightToFitVerticallyWithWidth:width];
+        contentSize.height += [tableFooterView heightToFitVerticallyWithWidth:width];
+        
+        
+        [self setTableHeaderView:tableHeaderView];
+        [self setTableFooterView:tableFooterView];
+        
+        [self setContentSize:contentSize];
+        [self setContentOffset:contentOffset];
+    }
 }
 
 @end

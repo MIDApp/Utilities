@@ -10,4 +10,6 @@
 
 @interface AutosizeTableView : UITableView
 
+- (void)adjustContentSize;
+    
 @end
