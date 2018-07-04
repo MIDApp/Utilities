@@ -84,7 +84,7 @@
 }
 
 
--(void)setMarkdownText: (NSString*)markdown {
+- (void)setMarkdownText: (NSString*)markdown {
     NSError *error;
     if (markdown == nil) {
         [self setText:nil];

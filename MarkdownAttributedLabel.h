@@ -9,7 +9,7 @@
 
 @interface MarkdownAttributedLabel : TTTAttributedLabel
 
--(void)setMarkdownText: (NSString*)markdown;
+- (void)setMarkdownText: (NSString*)markdown;
 
 @end
 
